@@ -13,27 +13,27 @@
 					{{csrf_field()}}
 					<div class="form-group">
 						<label class="form-label" for="title">Título</label>
-						<input type="text" name="title" id="title" class="form-control">
+						<input type="text" name="title" id="title" class="form-control" value="{{$pelicula->title}}">
 					</div>
 
 					<div class="form-group">
 						<label class="form-label">Año</label>
-						<input type="number" name="year">
+						<input type="number" name="year" value="{{$pelicula->year}}">
 					</div>
 
 					<div class="form-group">
 						<label class="form-label">Director</label>
-						<input type="text" name="director">
+						<input type="text" name="director" value="{{$pelicula->director}}" >
 					</div>
 
 					<div class="form-group">
 						<label class="form-label">Poster</label>
-						<input type="text" name="poster">
+						<input type="text" name="poster" value="{{$pelicula->poster}}">
 					</div>
 
 					<div class="form-group">
 						<label for="synopsis">Resumen</label>
-						<textarea name="synopsis" id="synopsis" class="form-control" rows="3"></textarea>
+						<textarea name="synopsis" id="synopsis" class="form-control"  rows="3">{{$pelicula->synopsis}}</textarea>
 					</div>
 
 					<div class="form-group text-center">
@@ -47,4 +47,4 @@
 		</div>
 	</div>
 </div>
-
+@endsection

@@ -24,6 +24,22 @@ class CatalogController extends Controller
 
 	public function getEdit($id){
 		$pelicula = Movie::findOrFail($id);
-		return view('catalog.create')->with($pelicula);
+		return view('catalog.edit')->with('pelicula',$pelicula);
+	}
+
+	public function postCreate(Request $request){
+		Movie::create($request->all());
+		return redirect('/catalog');
+	}
+
+	public function putEdit(Request $request,$id){
+		$pelicula= Movie::findOrFail($id);
+		$pelicula->title=$request->title;
+		$pelicula->year=$request->year;
+		$pelicula->director=$request->director;
+		$pelicula->poster=$request->poster;
+		$pelicula->synopsis=$request->synopsis;
+		$pelicula->save();
+		return redirect('/catalog');
 	}
 }
