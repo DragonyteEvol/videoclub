@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Movie;
+use Notification;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notification as NotificationsNotification;
+use Illuminate\Support\Facades\Notification as FacadesNotification;
 
 class CatalogController extends Controller
 {
@@ -41,5 +44,25 @@ class CatalogController extends Controller
 		$pelicula->synopsis=$request->synopsis;
 		$pelicula->save();
 		return redirect('/catalog');
+	}
+
+	public function putRent($id){
+		$movie= Movie::findOrFail($id);
+		$movie->rented=true;
+		$movie->save();
+		return redirect('/catalog/show/' . $id);
+	}
+
+	public function putReturn($id){
+		$movie= Movie::findOrFail($id);
+		$movie->rented=false;
+		$movie->save();
+		return redirect('/catalog/show/' . $id);
+	}
+
+	public function deleteMovie($id){
+		$movie = Movie::findOrFail($id);
+		$movie->delete();
+		return redirect('catalog');
 	}
 }

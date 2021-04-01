@@ -7,8 +7,12 @@ Route::group(['middleware'=>'auth'],function(){
 Route::get('catalog','CatalogController@getIndex');
 Route::get('catalog/show/{id}','CatalogController@getShow');
 Route::post('catalog/create','CatalogController@postCreate');
+Route::get('catalog/create','CatalogController@getCreate');
 Route::get('catalog/edit/{id}','CatalogController@getEdit');
 Route::put('catalog/edit/{id}','CatalogController@putEdit');
+Route::put('catalgon/rent/{id}','CatalogController@putRent');
+Route::put('catalgon/return/{id}','CatalogController@putReturn');
+Route::delete('catalgon/delete/{id}','CatalogController@deleteMovie');
 });
 
 Auth::routes();
