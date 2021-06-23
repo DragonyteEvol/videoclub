@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('title')
+MovieClub - Show Movie
+@endsection
 @section('content')
 <div class="container">
 	<div class="row p-1 my-3" style="border: solid #f2f2f2 2px;border-radius: 15px;">

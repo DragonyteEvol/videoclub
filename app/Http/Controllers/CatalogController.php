@@ -82,6 +82,9 @@ class CatalogController extends Controller
 	}
 
 	public function searchImdb(Request $request){
+		$request->validate([
+			'search' => ['required','min:3'],
+		]);
 		$url='http://www.omdbapi.com/?s='.$request->search.'&apikey='.$this->key;
 		$data=file_get_contents($url);
 		$item=(json_decode($data,true));

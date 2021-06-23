@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@section('title')
+MovieClub - Register Movie
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

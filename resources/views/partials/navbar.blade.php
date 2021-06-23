@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
-<a class="navbar-brand btn btn-danger" href="/" style="color:#0A1931;border-radius: 15px;"><b><span style="font-size:15pt">&#9820;</span> VideoClub</b></a>
+<a class="navbar-brand" href="{{route('catalog')}}" style="color:#0A1931;border-radius: 15px;"><b><span style="font-size:15pt">&#9820;</span> MOVIECLUB</b></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,7 +28,7 @@
                     </li>
       </ul>
       <form class="d-flex" action="{{route('searchMovie')}}" method="GET">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+        <input class="form-control me-2" type="search" required placeholder="Search" aria-label="Search" name="search">
       </form>
     </div>
 @endif

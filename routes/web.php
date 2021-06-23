@@ -4,11 +4,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','HomeController@getHome');
 Route::group(['middleware'=>'auth'],function(){
-	Route::get('catalog','CatalogController@getIndex');
+	Route::get('catalog','CatalogController@getIndex')->name('catalog');
 	Route::get('catalog/show/{id}','CatalogController@getShow')->name('showMovie');
 	Route::post('catalog/create','CatalogController@postCreate');
 	Route::get('catalog/create','CatalogController@getCreate');
-	Route::get('catalog/edit/{id}','CatalogController@getEdit');
+	Route::get('catalog/edit/{id}','CatalogController@getEdit')->name('editMovie');
 	Route::put('catalog/edit/{id}','CatalogController@putEdit');
 	Route::put('catalgon/rent/{id}','CatalogController@putRent');
 	Route::put('catalgon/rent/c/{id}','CatalogController@putRentC');

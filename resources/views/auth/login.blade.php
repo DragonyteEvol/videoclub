@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@section('title')
+MovieClub - Login
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -65,6 +67,7 @@
                             </div>
                         </div>
                     </form>
+				<a href="{{route('register')}}"><button class="btn btn-primary">Register</button></a>
                 </div>
             </div>
         </div>
